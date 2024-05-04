@@ -8,10 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 
-../src/dev/
-./src/dev/
-./src/dev/*
-
+dev
 
 node_modules
 dist
