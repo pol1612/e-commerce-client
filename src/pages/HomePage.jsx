@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import ProductCard from "../components/ProductCard.jsx";
-import {Grid, Stack} from "@mui/material";
+import {Grid} from "@mui/material";
+import NavBar from "../components/NavBar.jsx";
 
 const HomePage = () => {
     const [productsList,setProductsList] = useState([])
@@ -22,6 +23,7 @@ const HomePage = () => {
     return (
 
         <>
+            <NavBar/>
             <h1>My HomePage</h1>
             <Grid container spacing={10} sx={{marginX: -2}}>
 

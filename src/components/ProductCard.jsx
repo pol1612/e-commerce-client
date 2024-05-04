@@ -9,7 +9,7 @@ const ProductCard = (props) => {
             <Card
                 sx={{
                     width: 345,
-                    height: 550,
+                    height: 450,
                     display: "flex",
                     justifyContent: "space-between",
                     flexDirection: "column",
