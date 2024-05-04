@@ -6,8 +6,11 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-src/dev/
-src/dev/*
+
+
+../src/dev/
+./src/dev/
+./src/dev/*
 
 
 node_modules
