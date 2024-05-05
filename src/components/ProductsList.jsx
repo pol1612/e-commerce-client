@@ -1,8 +1,10 @@
 import {useEffect, useState} from "react";
 import {Grid} from "@mui/material";
 import ProductCard from "./ProductCard.jsx";
+import axios from "axios";
 
 const ProductsList = () => {
+    const baseApiUrl = import.meta.env.VITE_BASE_URL
     const [productsList,setProductsList] = useState([])
 
     useEffect(() => {
@@ -11,7 +13,7 @@ const ProductsList = () => {
 
     const fetchProductsList = async () => {
         try{
-            const response = await fetch('http://localhost:5000/api/v1/products')
+            const response = await fetch(`${baseApiUrl}/products`)
             const data = await response.json()
             setProductsList(data)
 
@@ -28,7 +30,7 @@ const ProductsList = () => {
                 {productsList.map(
                     (product, index) =>(
                         <Grid item key={index} xs={4}  sx={{ paddingX: 2}}>
-                            <ProductCard product={product}/>
+                            <ProductCard product={product} setproductsList={setProductsList} productsList={productsList}/>
                         </Grid>
                     )
                 )
