@@ -1,7 +1,7 @@
 import NavBar from "../components/NavBar.jsx";
 import UpdateProduct from "../components/UpdateProduct.jsx";
 
-const UpdateProductPage = async () => {
+const UpdateProductPage = () => {
     return(
         <>
             <NavBar/>

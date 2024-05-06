@@ -11,6 +11,7 @@ const ProductCard = (props) => {
     const baseApiUrl = import.meta.env.VITE_BASE_URL
 
     const onUpdateButtonClick = (id) => {
+
         navigate("/product-update/"+id)
     }
     const onDeleteButtonClick = async (id) => {
