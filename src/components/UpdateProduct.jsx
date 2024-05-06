@@ -5,6 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const UpdateProduct = () => {
+  const baseApiUrl = import.meta.env.VITE_BASE_URL
   const { id } = useParams();
   const navigate = useNavigate();
   const [productData, setProductData] = useState({});
@@ -15,7 +16,7 @@ const UpdateProduct = () => {
 
   const getProduct = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/v1/products/" + id);
+      const response = await axios.get(`${baseApiUrl}/products/` + id);
       console.log(response.data);
       setProductData(response.data);
     } catch (e) {
@@ -31,7 +32,7 @@ const UpdateProduct = () => {
 
   const handleUpdate = async () => {
     try {
-      const response = await axios.put("http://localhost:5000/api/v1/products/" + id, productData);
+      const response = await axios.put(`${baseApiUrl}/products/` + id, productData);
       if (response.status === 200) {
         navigate("/");
       }
@@ -217,7 +218,7 @@ const UpdateProduct = () => {
                 color="primary"
                 onClick={handleUpdate}
               >
-                Update
+                Update Product
               </Button>
             </Grid>
             <Grid item></Grid>
