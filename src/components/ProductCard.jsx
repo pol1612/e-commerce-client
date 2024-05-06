@@ -3,6 +3,7 @@ import {Button, Card, CardActions, CardContent, CardHeader, CardMedia, Rating, S
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import process from 'process'
+import productsList from "./ProductsList.jsx";
 
 const ProductCard = (props) => {
 
@@ -17,10 +18,11 @@ const ProductCard = (props) => {
     const onDeleteButtonClick = async (id) => {
         try{
             console.log(baseApiUrl)
+            props.setProductsList(props.productsList)
             const response = await axios.delete(`${baseApiUrl}/products/${id}`)
             if (response.status === 200){
                 console.log(200)
-                props.setproductsList(props.productsList.filter(product => product._id !== id))
+                props.setProductsList(props.productsList.filter(product => product._id !== id))
             }
         }catch (e) {
             console.log(e)

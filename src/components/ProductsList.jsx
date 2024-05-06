@@ -9,8 +9,14 @@ const ProductsList = () => {
 
     useEffect(() => {
         fetchProductsList()
-    }, []);
+    }, [productsList]);
+    const handleProductsListUpdate = async (newList) => {
+        console.log(`NEW LIST LENGTH: ${newList.length} CURRENT LIST LENGTH: ${productsList.length}`)
+        await setProductsList(newList)
+        console.log(productsList.length)
+        console.log(`NEW LIST LENGTH: ${newList.length} CURRENT LIST LENGTH: ${productsList.length}`)
 
+    }
     const fetchProductsList = async () => {
         try{
             const response = await fetch(`${baseApiUrl}/products`)
@@ -30,7 +36,7 @@ const ProductsList = () => {
                 {productsList.map(
                     (product, index) =>(
                         <Grid item key={index} xs={4}  sx={{ paddingX: 2}}>
-                            <ProductCard product={product} setproductsList={setProductsList} productsList={productsList}/>
+                            <ProductCard product={product} setProductsList={handleProductsListUpdate} productsList={productsList}/>
                         </Grid>
                     )
                 )
