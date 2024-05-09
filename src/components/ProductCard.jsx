@@ -18,12 +18,12 @@ const ProductCard = (props) => {
     const onDeleteButtonClick = async (id) => {
         try{
             console.log(baseApiUrl)
-            props.setProductsList(props.productsList)
             const response = await axios.delete(`${baseApiUrl}/products/${id}`)
             if (response.status === 200){
                 console.log(200)
-                props.setProductsList(props.productsList.filter(product => product._id !== id))
+                props.onDelete(product)
             }
+
         }catch (e) {
             console.log(e)
         }
@@ -42,7 +42,7 @@ const ProductCard = (props) => {
                 <CardHeader title={product.title}/>
                 <CardMedia
                     component="img"
-                    height="174"
+                    height="144"
                     image={product.images}
                     alt="Product Image"
                 />

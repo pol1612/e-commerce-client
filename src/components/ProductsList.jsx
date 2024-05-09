@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react";
-import {Grid} from "@mui/material";
+import {Button, Grid} from "@mui/material";
 import ProductCard from "./ProductCard.jsx";
-import axios from "axios";
 
 const ProductsList = () => {
     const baseApiUrl = import.meta.env.VITE_BASE_URL
@@ -9,14 +8,14 @@ const ProductsList = () => {
 
     useEffect(() => {
         fetchProductsList()
-    }, [productsList]);
-    const handleProductsListUpdate = async (newList) => {
-        console.log(`NEW LIST LENGTH: ${newList.length} CURRENT LIST LENGTH: ${productsList.length}`)
-        await setProductsList(newList)
-        console.log(productsList.length)
-        console.log(`NEW LIST LENGTH: ${newList.length} CURRENT LIST LENGTH: ${productsList.length}`)
+    }, []);
 
+    const handleDelete = (product) => {
+        setProductsList(prevState =>
+            prevState.filter((productValue) => productValue._id !== product._id)
+        )
     }
+
     const fetchProductsList = async () => {
         try{
             const response = await fetch(`${baseApiUrl}/products`)
@@ -35,8 +34,12 @@ const ProductsList = () => {
 
                 {productsList.map(
                     (product, index) =>(
-                        <Grid item key={index} xs={4}  sx={{ paddingX: 2}}>
-                            <ProductCard product={product} setProductsList={handleProductsListUpdate} productsList={productsList}/>
+                        <Grid item key={product._id} xs={4}  sx={{ paddingX: 2}}>
+                            <ProductCard
+                                index={index}
+                                product={product}
+                                onDelete={handleDelete}
+                            />
                         </Grid>
                     )
                 )
