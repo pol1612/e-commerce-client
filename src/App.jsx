@@ -11,6 +11,7 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
+
                 <Route  path="/"  element={<HomePage/>} />
                 <Route  path="/add-product"  element={<AddProductPage/>}/>
                 <Route  path="/product-update/:id" element={<UpdateProductPage/>}/>
