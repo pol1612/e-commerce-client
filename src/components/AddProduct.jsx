@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const AddProduct = () => {
+  const baseApiUrl = import.meta.env.VITE_BASE_URL
   const navigate = useNavigate();
   const [productData, setProductData] = useState({
     title: "",
@@ -27,7 +28,7 @@ const AddProduct = () => {
   const handleSave = async () => {
     console.log(productData);
     try {
-      const response = await axios.post("http://localhost:5000/api/v1/products", productData);
+      const response = await axios.post(`${baseApiUrl}/products`, productData);
       console.log(response.data);
       if (response.status === 200) {
         navigate("/");
