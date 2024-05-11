@@ -9,7 +9,5 @@ const HomePage = () => {
             <ProductsList/>
         </>
     )
-
-
 }
 export default  HomePage

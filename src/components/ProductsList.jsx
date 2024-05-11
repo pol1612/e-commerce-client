@@ -29,7 +29,7 @@ const ProductsList = () => {
     return (
 
         <>
-            <h1>My HomePage</h1>
+            <h1></h1>
             <Grid container spacing={10} sx={{marginX: -2}}>
 
                 {productsList.map(

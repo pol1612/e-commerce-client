@@ -13,25 +13,27 @@ const NavBar = () => {
     }
     return (
         <>
-            <Box sx={{flexGrow: 1}}>
-                <AppBar position="static">
-                    <Toolbar>
-                        <Typography
-                            variant="h6"
-                            component="div"
-                            sx={{flexGrow: 1}}
-                        >
-                            E-COMMERCE
-                        </Typography>
-                        <Button color="inherit" onClick={navigateToHomePage}>
-                            Home
-                        </Button>
-                        <Button color="inherit" onClick={navigateToAddProductPage}>
-                            Add Product
-                        </Button>
-                    </Toolbar>
-                </AppBar>
-            </Box>
+            <AppBar
+                position="static"
+                sx={{ width: '100%',
+                    backgroundColor: '#D4AF37'
+                }}>
+                <Toolbar>
+                    <Typography
+                        variant="h6"
+                        component="div"
+                        sx={{flexGrow: 1}}
+                    >
+                        E-COMMERCE
+                    </Typography>
+                    <Button color="inherit" onClick={navigateToHomePage}>
+                        Home
+                    </Button>
+                    <Button color="inherit" onClick={navigateToAddProductPage}>
+                        Add Product
+                    </Button>
+                </Toolbar>
+            </AppBar>
         </>
     )
 }
