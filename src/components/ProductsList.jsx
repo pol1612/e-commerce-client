@@ -28,24 +28,29 @@ const ProductsList = () => {
     }
     return (
 
-        <>
-            <h1></h1>
-            <Grid container spacing={10} sx={{marginX: -2}}>
+        <div style={{ width: '100%', justifyContent: 'flex-end'}}>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
 
-                {productsList.map(
-                    (product, index) =>(
-                        <Grid item key={product._id} xs={4}  sx={{ paddingX: 2}}>
-                            <ProductCard
-                                index={index}
-                                product={product}
-                                onDelete={handleDelete}
-                            />
-                        </Grid>
-                    )
-                )
-                }
-            </Grid>
-        </>
+            <div style={{display: 'flex', justifyContent: 'center', }}>
+                <Grid container spacing={10} sx={{marginX: -2}}>
+                    {productsList.map(
+                        (product, index) => (
+                            <Grid item key={product._id} xs={4} sx={{paddingX: 2,}}>
+                                <ProductCard
+                                    index={index}
+                                    product={product}
+                                    onDelete={handleDelete}
+                                />
+                            </Grid>
+                            )
+                        )
+                    }
+                </Grid>
+            </div>
+        </div>
     )
 }
 

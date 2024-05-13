@@ -33,43 +33,65 @@ const ProductCard = (props) => {
             <Card
                 sx={{
                     width: 345,
-                    height: 450,
+                    height: 550,
                     display: "flex",
                     justifyContent: "space-between",
                     flexDirection: "column",
+                    backgroundColor: '#ADD8E6',
                 }}
             >
                 <CardHeader title={product.title}/>
                 <CardMedia
                     component="img"
-                    height="144"
+                    height="194"
                     image={product.images}
                     alt="Product Image"
                 />
                 <CardContent>
                     <Stack direction="column" spacing={1}>
-                        <Typography variant="body2" color="text.secondary">
+
+                        <Typography
+                            variant="body2"
+                            color="text.secondary"
+                            component="div"
+                            sx={{
+                                width: 300,
+                                height: 50,
+                                overflow: 'auto',
+                                border: '1px solid #000',
+                                padding: '5px',
+                            }}
+                        >
                             {product.description}
                         </Typography>
+
                         <Stack direction="row" spacing={1}>
+
                             <Rating
                                 name="half-rating-read"
                                 defaultValue={product.rating}
                                 precision={0.5}
                                 readOnly
                             />
+
                             <Typography variant="body1" color="text.primary">
                                 {product.rating}
                             </Typography>
+
                         </Stack>
+
                         <Stack direction="column">
-                            <Typography variant="body1" color="text.primary">
-                                {product.price} $
+
+                            <Typography variant="body1" color="text.primary" >
+                                $ {product.price}
                             </Typography>
+
                             <Typography variant="body1" color="text.primary">
                                 Price discount: {product.discountPercentage}%
                             </Typography>
+
                         </Stack>
+
                     </Stack>
                 </CardContent>
                 <CardActions>
@@ -91,6 +113,7 @@ const ProductCard = (props) => {
                     </Stack>
                 </CardActions>
             </Card>
+
         </>
     )
 

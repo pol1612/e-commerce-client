@@ -14,8 +14,10 @@ const NavBar = () => {
     return (
         <>
             <AppBar
-                position="static"
-                sx={{ width: '100%',
+                position="fixed"
+                sx={{
+                    width: '100%',
+                    top: 0,
                     backgroundColor: '#D4AF37'
                 }}>
                 <Toolbar>
