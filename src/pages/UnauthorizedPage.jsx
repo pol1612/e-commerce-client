@@ -5,6 +5,10 @@ const UnauthorizedPage = () => {
     return(
         <>
             <NavBar/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <Unauthorized/>
         </>
     )
