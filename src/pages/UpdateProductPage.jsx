@@ -5,6 +5,10 @@ const UpdateProductPage = () => {
     return(
         <>
             <NavBar/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <UpdateProduct/>
         </>
     )

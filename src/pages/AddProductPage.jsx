@@ -5,6 +5,10 @@ const AddProductPage = () => {
     return(
         <>
             <NavBar/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <AddProduct/>
         </>
     )

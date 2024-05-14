@@ -6,8 +6,12 @@ const HomePage = () => {
     return(
         <>
             <NavBar/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <ProductsList/>
         </>
     )
 }
-export default  HomePage
+export default HomePage

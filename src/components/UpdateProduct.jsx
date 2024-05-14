@@ -84,6 +84,9 @@ const UpdateProduct = () => {
                          value={productData.title || ""}
                          name="title"
                          onChange={handleInputChanges}
+                         sx={{
+                           backgroundColor: "#ADD8E6",
+                         }}
                        />
                      </Grid>
 
@@ -97,6 +100,9 @@ const UpdateProduct = () => {
                          value={productData.brand || ""}
                          name="brand"
                          onChange={handleInputChanges}
+                         sx={{
+                           backgroundColor: "#ADD8E6",
+                         }}
                        />
                      </Grid>
 
@@ -110,6 +116,9 @@ const UpdateProduct = () => {
                          value={productData.category || ""}
                          name="category"
                          onChange={handleInputChanges}
+                         sx={{
+                           backgroundColor: "#ADD8E6",
+                         }}
                        />
                      </Grid>
 
@@ -123,6 +132,9 @@ const UpdateProduct = () => {
                          value={productData.description || ""}
                          name="description"
                          onChange={handleInputChanges}
+                         sx={{
+                           backgroundColor: "#ADD8E6",
+                         }}
                        />
                      </Grid>
 
@@ -137,6 +149,9 @@ const UpdateProduct = () => {
                          value={productData.discountPercentage || ""}
                          name="discountPercentage"
                          onChange={handleInputChanges}
+                         sx={{
+                           backgroundColor: "#ADD8E6",
+                         }}
                        />
                      </Grid>
                    </Grid>
@@ -155,6 +170,9 @@ const UpdateProduct = () => {
                          //value={productData.images.toString()}
                          name="images"
                          onChange={handleInputChanges}
+                         sx={{
+                           backgroundColor: "#ADD8E6",
+                         }}
                        />
                      </Grid>
 
@@ -169,6 +187,9 @@ const UpdateProduct = () => {
                          value={productData.price || ""}
                          name="price"
                          onChange={handleInputChanges}
+                         sx={{
+                           backgroundColor: "#ADD8E6",
+                         }}
                        />
                      </Grid>
 
@@ -183,6 +204,9 @@ const UpdateProduct = () => {
                          value={productData.rating || ""}
                          name="rating"
                          onChange={handleInputChanges}
+                         sx={{
+                           backgroundColor: "#ADD8E6",
+                         }}
                        />
                      </Grid>
 
@@ -197,6 +221,9 @@ const UpdateProduct = () => {
                          value={productData.stock || ""}
                          name="stock"
                          onChange={handleInputChanges}
+                         sx={{
+                           backgroundColor: "#ADD8E6",
+                         }}
                        />
                      </Grid>
 
@@ -210,6 +237,9 @@ const UpdateProduct = () => {
                          value={productData.thumbnail || ""}
                          name="thumbnail"
                          onChange={handleInputChanges}
+                         sx={{
+                           backgroundColor: "#ADD8E6",
+                         }}
                        />
                      </Grid>
                    </Grid>

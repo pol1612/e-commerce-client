@@ -29,11 +29,6 @@ const ProductsList = () => {
     return (
 
         <div style={{ width: '100%', justifyContent: 'flex-end'}}>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-
             <div style={{display: 'flex', justifyContent: 'center', }}>
                 <Grid container spacing={10} sx={{marginX: -2}}>
                     {productsList.map(

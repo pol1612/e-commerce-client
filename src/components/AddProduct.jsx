@@ -44,7 +44,6 @@ const AddProduct = () => {
         container
         alignContent="center"
         justifyContent="center"
-        style={{ paddingTop: "50px" }}
       >
         <Paper
           elevation={3}
@@ -68,6 +67,7 @@ const AddProduct = () => {
               <Grid container direction="row" gap={3}>
                 <Grid item>
                   <Grid container direction="column" gap={2}>
+
                     <Grid item>
                       <TextField
                         label="Title"
@@ -78,6 +78,9 @@ const AddProduct = () => {
                         value={productData.title}
                         name="title"
                         onChange={handleInputChanges}
+                        sx={{
+                          backgroundColor: "#ADD8E6",
+                        }}
                       />
                     </Grid>
 
@@ -91,6 +94,9 @@ const AddProduct = () => {
                         value={productData.brand}
                         name="brand"
                         onChange={handleInputChanges}
+                        sx={{
+                          backgroundColor: "#ADD8E6",
+                        }}
                       />
                     </Grid>
 
@@ -104,6 +110,9 @@ const AddProduct = () => {
                         value={productData.category}
                         name="category"
                         onChange={handleInputChanges}
+                        sx={{
+                          backgroundColor: "#ADD8E6",
+                        }}
                       />
                     </Grid>
 
@@ -117,6 +126,9 @@ const AddProduct = () => {
                         value={productData.description}
                         name="description"
                         onChange={handleInputChanges}
+                        sx={{
+                          backgroundColor: "#ADD8E6",
+                        }}
                       />
                     </Grid>
 
@@ -131,6 +143,9 @@ const AddProduct = () => {
                         value={productData.discountPercentage}
                         name="discountPercentage"
                         onChange={handleInputChanges}
+                        sx={{
+                          backgroundColor: "#ADD8E6",
+                        }}
                       />
                     </Grid>
                   </Grid>
@@ -148,6 +163,9 @@ const AddProduct = () => {
                         value={productData.images}
                         name="images"
                         onChange={handleInputChanges}
+                        sx={{
+                          backgroundColor: "#ADD8E6",
+                        }}
                       />
                     </Grid>
 
@@ -162,6 +180,9 @@ const AddProduct = () => {
                         value={productData.price}
                         name="price"
                         onChange={handleInputChanges}
+                        sx={{
+                          backgroundColor: "#ADD8E6",
+                        }}
                       />
                     </Grid>
 
@@ -176,6 +197,9 @@ const AddProduct = () => {
                         value={productData.rating}
                         name="rating"
                         onChange={handleInputChanges}
+                        sx={{
+                          backgroundColor: "#ADD8E6",
+                        }}
                       />
                     </Grid>
 
@@ -190,6 +214,9 @@ const AddProduct = () => {
                         value={productData.stock}
                         name="stock"
                         onChange={handleInputChanges}
+                        sx={{
+                          backgroundColor: "#ADD8E6",
+                        }}
                       />
                     </Grid>
 
@@ -203,6 +230,9 @@ const AddProduct = () => {
                         value={productData.thumbnail}
                         name="thumbnail"
                         onChange={handleInputChanges}
+                        sx={{
+                          backgroundColor: "#ADD8E6",
+                        }}
                       />
                     </Grid>
                   </Grid>
