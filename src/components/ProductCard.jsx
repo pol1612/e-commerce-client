@@ -13,7 +13,7 @@ const ProductCard = (props) => {
 
     const onUpdateButtonClick = (id) => {
 
-        navigate("/product-update/"+id)
+        navigate("/update-product/"+id)
     }
     const onDeleteButtonClick = async (id) => {
         try{

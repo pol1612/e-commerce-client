@@ -6,10 +6,6 @@ const HomePage = () => {
     return(
         <>
             <NavBar/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
             <ProductsList/>
         </>
     )

@@ -6,6 +6,9 @@ import UpdateProductPage from "./pages/UpdateProductPage.jsx";
 import AuthenticationPage from "./pages/AuthenticationPage.jsx";
 import UnauthorizedPage from "./pages/UnauthorizedPage.jsx";
 import {useState} from "react";
+import RequiredAuthentication from "./utils/RequiredAuthentication.jsx";
+import AuthContext from "./context/AuthContext.jsx";
+import DeleteProductPage from "./pages/DeleteProductPage.jsx";
 
 
 function App() {
@@ -27,20 +30,50 @@ function App() {
         setLoggedInUser({token: null, userId: null, isAdmin: false});
     }
     return (
+        /**<AuthContext.Provider
+            value={{
+                token: loggedInUser.token,
+                userId: loggedInUser.userId,
+                isAdmin: loggedInUser.isAdmin,
+                login: login,
+                logout: logout,
+            }}
+        >**/
+            <BrowserRouter>
+                <Routes>
 
-        <BrowserRouter>
+                    <Route  path="/"  element={<HomePage/>} />
+                    <Route  path="/authentication" element={<AuthenticationPage/>}/>
+                    <Route  path="/unauthorized" element={<UnauthorizedPage/>}/>
+                    {/*PRODUCT CRUD ROUTES*/}
+                    <Route
+                        path="/add-product"
+                        element={
+                            /**<RequiredAuthentication>**/
+                                <AddProductPage/>
+                            /**</RequiredAuthentication>**/
+                        }
+                    />
+                    <Route
+                        path="/update-product/:id"
+                        element={
+                            /**<RequiredAuthentication>**/
+                                <UpdateProductPage/>
+                            /**</RequiredAuthentication>**/
+                        }
+                    />
+                    <Route
+                        path="/delete-product/:id"
+                        element={
+                            /**<RequiredAuthentication>**/
+                                <DeleteProductPage/>
+                            /**</RequiredAuthentication>**/
+                        }
+                    />
 
-            <Routes>
-
-                <Route  path="/"  element={<HomePage/>} />
-                <Route  path="/add-product"  element={<AddProductPage/>}/>
-                <Route  path="/product-update/:id" element={<UpdateProductPage/>}/>
-                <Route  path="/authentication" element={<AuthenticationPage/>}/>
-                <Route  path="/unauthorized" element={<UnauthorizedPage/>}/>
-
-            </Routes>
-
-        </BrowserRouter>
+                </Routes>
+            </BrowserRouter>
+    /**</AuthContext.Provider>**/
 
     )
 }

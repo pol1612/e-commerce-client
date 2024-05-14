@@ -27,25 +27,30 @@ const ProductsList = () => {
         }
     }
     return (
-
-        <div style={{ width: '100%', justifyContent: 'flex-end'}}>
-            <div style={{display: 'flex', justifyContent: 'center', }}>
-                <Grid container spacing={10} sx={{marginX: -2}}>
-                    {productsList.map(
-                        (product, index) => (
-                            <Grid item key={product._id} xs={4} sx={{paddingX: 2,}}>
-                                <ProductCard
-                                    index={index}
-                                    product={product}
-                                    onDelete={handleDelete}
-                                />
-                            </Grid>
+        <>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div style={{width: '100%', justifyContent: 'flex-end'}}>
+                <div style={{display: 'flex', justifyContent: 'center',}}>
+                    <Grid container spacing={10} sx={{marginX: -2}}>
+                        {productsList.map(
+                            (product, index) => (
+                                <Grid item key={product._id} xs={4} sx={{paddingX: 2,}}>
+                                    <ProductCard
+                                        index={index}
+                                        product={product}
+                                        onDelete={handleDelete}
+                                    />
+                                </Grid>
                             )
                         )
-                    }
-                </Grid>
+                        }
+                    </Grid>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
