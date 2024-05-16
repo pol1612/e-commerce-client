@@ -33,7 +33,11 @@ const ProductCard = (props) => {
     const onDeleteButtonClick = async (id) => {
         try{
             console.log(baseApiUrl)
-            const response = await axios.delete(`${baseApiUrl}/products/${id}`)
+            const response = await axios.delete(`${baseApiUrl}/products/${id}`, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                }
+            })
             if (response.status === 200){
                 console.log(200)
                 props.onDelete(product)

@@ -28,7 +28,11 @@ const AddProduct = () => {
   const handleSave = async () => {
     console.log(productData);
     try {
-      const response = await axios.post(`${baseApiUrl}/products`, productData);
+      const response = await axios.post(`${baseApiUrl}/products`, productData,{
+          headers: {
+              'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          }
+      });
       console.log(response.data);
       if (response.status === 200) {
         navigate("/");

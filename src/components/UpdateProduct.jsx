@@ -16,9 +16,13 @@ const UpdateProduct = () => {
 
   const getProduct = async () => {
     try {
-      console.log(`${baseApiUrl}/products/` + id)
-      const response = await axios.get(`${baseApiUrl}/products/` + id);
-      console.log(response.data);
+        console.log(`${baseApiUrl}/products/` + id)
+        const response = await axios.get(`${baseApiUrl}/products/` + id, {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            }
+        });
+        console.log(response.data);
       setProductData(response.data);
     } catch (e) {
       console.log(e);
@@ -33,7 +37,11 @@ const UpdateProduct = () => {
 
   const handleUpdate = async () => {
     try {
-      const response = await axios.put(`${baseApiUrl}/products/` + id, productData);
+      const response = await axios.put(`${baseApiUrl}/products/` + id, productData,{
+          headers: {
+              'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          }
+      });
       if (response.status === 200) {
         navigate("/");
       }
