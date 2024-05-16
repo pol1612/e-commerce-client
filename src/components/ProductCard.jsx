@@ -47,7 +47,6 @@ const ProductCard = (props) => {
             console.log(e)
         }
     }
-    var localStorage1 = localStorage;
     return (
         <>
             <Card
@@ -117,7 +116,7 @@ const ProductCard = (props) => {
                 </CardContent>
 
                 <CardActions>
-                    {localStorage.getItem("token") && localStorage.getItem("isAdmin") ? (
+                    {localStorage.getItem("token") && localStorage.getItem("isAdmin") === "true" ? (
                         <Stack direction="row" gap={2}>
                             <Button
                                 color="primary"

@@ -6,14 +6,15 @@ import AuthContext from "../context/AuthContext.jsx";
 
 const NavBar = () => {
     const navigate = useNavigate();
-    const [token, setToken] = useState();
-    const [isAdmin, setIsAdmin] = useState();
+    const [token, setToken] = useState(null);
+    const [isAdmin, setIsAdmin] = useState(false);
     const authContext = useContext(AuthContext);
 
     useEffect(() => {
         setToken(localStorage.getItem("token"));
-        setIsAdmin(localStorage.getItem("isAdmin"));
-    }, [token]);
+        setIsAdmin(localStorage.getItem("isAdmin") === "true");
+        console.log("navBar isAdmin: "+isAdmin);
+    }, [localStorage]);
     const navigateToHomePage = () => {
         navigate('/');
     }
