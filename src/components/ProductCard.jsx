@@ -81,22 +81,23 @@ const ProductCard = (props) => {
                             {product.description}
                         </Typography>
 
-                        <Stack direction="row" spacing={1}>
 
-                            <Rating
-                                name="half-rating-read"
-                                defaultValue={product.rating}
-                                precision={0.5}
-                                readOnly
-                            />
 
-                            <Typography variant="body1" color="text.primary">
-                                {product.rating}
-                            </Typography>
+                        <Stack direction="column" alignContent="center">
+                            <Stack direction="row" spacing={1} justifyContent="center">
 
-                        </Stack>
+                                <Rating
+                                    name="half-rating-read"
+                                    defaultValue={product.rating}
+                                    precision={0.5}
+                                    readOnly
+                                />
 
-                        <Stack direction="column">
+                                <Typography variant="body1" color="text.primary">
+                                    {product.rating}
+                                </Typography>
+
+                            </Stack>
 
                             <Typography variant="body1" color="text.primary" >
                                 $ {product.price}
