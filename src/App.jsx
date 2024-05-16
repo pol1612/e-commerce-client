@@ -21,6 +21,7 @@ function App() {
     const login = (token, userId, isAdmin) => {
         localStorage.setItem("token", token);
         localStorage.setItem("userId", userId);
+        localStorage.setItem("isAdmin", isAdmin)
         setLoggedInUser({token: token,userId: userId,isAdmin: isAdmin});
     }
 
@@ -30,7 +31,7 @@ function App() {
         setLoggedInUser({token: null, userId: null, isAdmin: false});
     }
     return (
-        /**<AuthContext.Provider
+        <AuthContext.Provider
             value={{
                 token: loggedInUser.token,
                 userId: loggedInUser.userId,
@@ -38,7 +39,7 @@ function App() {
                 login: login,
                 logout: logout,
             }}
-        >**/
+        >
             <BrowserRouter>
                 <Routes>
 
@@ -49,31 +50,31 @@ function App() {
                     <Route
                         path="/add-product"
                         element={
-                            /**<RequiredAuthentication>**/
+                            <RequiredAuthentication>
                                 <AddProductPage/>
-                            /**</RequiredAuthentication>**/
+                            </RequiredAuthentication>
                         }
                     />
                     <Route
                         path="/update-product/:id"
                         element={
-                            /**<RequiredAuthentication>**/
+                            <RequiredAuthentication>
                                 <UpdateProductPage/>
-                            /**</RequiredAuthentication>**/
+                            </RequiredAuthentication>
                         }
                     />
                     <Route
                         path="/delete-product/:id"
                         element={
-                            /**<RequiredAuthentication>**/
+                            <RequiredAuthentication>
                                 <DeleteProductPage/>
-                            /**</RequiredAuthentication>**/
+                            </RequiredAuthentication>
                         }
                     />
 
                 </Routes>
             </BrowserRouter>
-    /**</AuthContext.Provider>**/
+        </AuthContext.Provider>
 
     )
 }

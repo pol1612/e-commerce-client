@@ -8,7 +8,7 @@ const RequiredAuthentication = ({children}) => {
     const token = localStorage.getItem('token');
     console.log(token);
     if(token === null && authContext.token === null){
-        return <Navigate to="/login" state={{from: location}} replace/>;
+        return <Navigate to="/unauthorized" state={{from: location}} replace/>;
     }
 
     return children;
